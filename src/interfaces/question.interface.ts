@@ -5,4 +5,5 @@ export interface Question extends Document {
   readonly answer: string;
   readonly difficultyRate: number;
   readonly bibleQuote: string;
+  readonly viewer: string;
 }

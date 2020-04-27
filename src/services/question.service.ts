@@ -1,8 +1,8 @@
 import { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Question } from './interfaces/question.interface';
-import { CreateQuestionDto} from './dto/create-question.dto';
+import { Question } from '../interfaces/question.interface';
+import { CreateQuestionDto} from '../dto/create-question.dto';
 
 @Injectable()
 export class QuestionsService {
@@ -14,6 +14,6 @@ export class QuestionsService {
   }
 
   async findAll(): Promise<Question[]> {
-    return this.questionModel.find().exec();
+    return this.questionModel.find().populate('viewer').exec();
   }
 }

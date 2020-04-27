@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
-import { CreateQuestionDto } from './dto/create-question.dto';
-import { QuestionsService} from './question.service';
-import { Question } from './interfaces/question.interface';
+import { CreateQuestionDto } from '../dto/create-question.dto';
+import { QuestionsService} from '../services/question.service';
+import { Question } from '../interfaces/question.interface';
 
 @Controller('questions')
 export class QuestionsController {

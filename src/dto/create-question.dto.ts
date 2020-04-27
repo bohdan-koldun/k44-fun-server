@@ -3,4 +3,5 @@ export class CreateQuestionDto {
   readonly answer: string;
   readonly difficultyRate: number;
   readonly bibleQuote: string;
+  readonly viewer: string;
 }

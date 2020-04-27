@@ -5,4 +5,5 @@ export const QuestionSchema = new mongoose.Schema({
   answer: String,
   difficultyRate: Number,
   bibleQuote: String,
+  viewer: { type: mongoose.Schema.Types.ObjectId, ref: 'Viewer'}
 });
