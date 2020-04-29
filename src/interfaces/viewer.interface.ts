@@ -5,4 +5,6 @@ export interface Viewer extends Document {
   readonly profession: string;
   readonly serve: string;
   readonly city: string;
+  readonly photo: string;
+  readonly email: string;
 }

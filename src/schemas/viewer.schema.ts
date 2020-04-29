@@ -5,4 +5,6 @@ export const ViewerSchema = new mongoose.Schema({
   profession: String,
   serve: String,
   city: String,
+  photo: String,
+  email: String,
 });
