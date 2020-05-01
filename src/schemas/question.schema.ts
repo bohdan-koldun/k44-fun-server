@@ -1,6 +1,7 @@
 import * as mongoose from 'mongoose';
 
 export const QuestionSchema = new mongoose.Schema({
+  created: { type : Date, default: Date.now },
   question: String,
   answer: String,
   approved: { type: Boolean, default: false },
