@@ -1,7 +1,6 @@
 import { Controller, Get, Post, Put, Param, Body, Delete } from '@nestjs/common';
 import { ViewerDto } from '../dto/viewer.dto';
 import { ViewersService } from '../services/viewer.service';
-import { Viewer } from '../interfaces/viewer.interface';
 
 @Controller('viewers')
 export class ViewersController {
@@ -23,12 +22,12 @@ export class ViewersController {
   }
 
   @Get()
-  async findAll(): Promise<Viewer[]> {
+  async findAll(): Promise<any[]> {
     return this.viewerService.findAll();
   }
 
   @Get(':id')
-  async findById(@Param('id') id): Promise<Viewer> {
+  async findById(@Param('id') id) {
     return this.viewerService.findById(id);
   }
 }

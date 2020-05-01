@@ -7,4 +7,5 @@ export const ViewerSchema = new mongoose.Schema({
   city: String,
   photo: String,
   email: String,
+  questions: [Object],
 });
