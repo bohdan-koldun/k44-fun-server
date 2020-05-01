@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
-import { CreateExpertDto } from '../dto/create-expert.dto';
+import { ExpertDto } from '../dto/expert.dto';
 import { ExpertsService } from '../services/expert.service';
 import { Expert } from '../interfaces/expert.interface';
 
@@ -8,8 +8,8 @@ export class ExpertsController {
   constructor(private readonly expertService: ExpertsService) {}
 
   @Post()
-  async create(@Body() createQuestionDto: CreateExpertDto) {
-    await this.expertService.create(createQuestionDto);
+  async create(@Body() expertDto: ExpertDto) {
+    await this.expertService.create(expertDto);
   }
 
   @Get()

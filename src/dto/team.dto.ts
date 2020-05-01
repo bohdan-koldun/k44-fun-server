@@ -1,6 +1,4 @@
-import { Document } from 'mongoose';
-
-export interface Team extends Document {
+export class TeamDto {
   name: string;
   readonly created: Date;
   readonly captain: Date;

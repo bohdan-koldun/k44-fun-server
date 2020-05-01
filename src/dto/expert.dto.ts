@@ -1,6 +1,4 @@
-import { Document } from 'mongoose';
-
-export interface Expert extends Document {
+export class ExpertDto {
   readonly name: string;
   readonly photo: string;
   readonly age: number;
