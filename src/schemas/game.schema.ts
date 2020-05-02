@@ -5,5 +5,5 @@ export const GameSchema = new mongoose.Schema({
   date: Date,
   created: { type : Date, default: Date.now },
   team: { type: mongoose.Schema.Types.ObjectId, ref: 'Team' },
-  viewers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Viewer' }],
+  blitz: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Question' }]
 });

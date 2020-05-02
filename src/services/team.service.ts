@@ -21,5 +21,4 @@ export class TeamsService {
   async findById(id: string): Promise<Team> {
     return this.teamModel.findById(id).populate(["captain", "experts"]);
   }
-
 }
