@@ -1,6 +1,9 @@
 {
   "name": "what-where-when-game-k44",
   "version": "0.0.1",
+  "engines": {
+    "node": "12.16.x"
+  },
   "description": "",
   "author": "",
   "private": true,
