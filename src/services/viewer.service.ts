@@ -32,8 +32,8 @@ export class ViewersService {
     const getCount = async viewer => {
       const [questionsCount, lostQuestions, wonQuestions] = await Promise.all([
         this.questionModel.find({ viewer: viewer.id }).count(),
-        this.questionModel.find({ expertAnswered: true, used: true }).count(),
-        this.questionModel.find({ expertAnswered: false, used: true }).count(),
+        this.questionModel.find({ expertAnswered: true, used: true, viewer: viewer.id }).count(),
+        this.questionModel.find({ expertAnswered: false, used: true, viewer: viewer.id }).count(),
       ]);
 
       return {
