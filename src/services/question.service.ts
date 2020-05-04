@@ -23,7 +23,7 @@ export class QuestionsService {
   }
 
   async findAll(): Promise<Question[]> {
-    return this.questionModel.find().populate('viewer').exec();
+    return this.questionModel.find({ used: { $ne: true } }).populate('viewer').exec();
   }
 
   async findById(id: string): Promise<Question> {
@@ -31,7 +31,7 @@ export class QuestionsService {
   }
 
   async count() {
-    const c = await  this.questionModel.count({name: 'ddd'})
+    const c = await this.questionModel.count({ name: 'ddd' })
     return c
   }
 }

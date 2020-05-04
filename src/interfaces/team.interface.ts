@@ -1,8 +1,8 @@
 import { Document } from 'mongoose';
 
 export interface Team extends Document {
-  name: string;
+  readonly name: string;
   readonly created: Date;
-  readonly captain: Date;
+  readonly captain: string;
   readonly experts: string[];
 }

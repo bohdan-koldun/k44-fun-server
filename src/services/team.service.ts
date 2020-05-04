@@ -3,7 +3,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Team } from '../interfaces/team.interface';
 import { TeamDto } from '../dto/team.dto';
-import { Question } from '../interfaces/question.interface';
 
 @Injectable()
 export class TeamsService {

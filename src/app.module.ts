@@ -1,11 +1,13 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { AuthModule } from './auth/auth.module';
 import {
   TeamSchema,
   ExpertSchema,
   ViewerSchema,
   QuestionSchema,
   GameSchema,
+  UserSchema,
 } from './schemas';
 import { QuestionsController } from './controllers/question.controller';
 import { QuestionsService } from './services/question.service';
@@ -27,7 +29,9 @@ import { GamesService } from './services/game.service';
       { name: 'Expert', schema: ExpertSchema },
       { name: 'Team', schema: TeamSchema },
       { name: 'Game', schema: GameSchema },
+      { name: 'User', schema: UserSchema },
     ]),
+    AuthModule,
   ],
   controllers: [
     QuestionsController, ViewersController,

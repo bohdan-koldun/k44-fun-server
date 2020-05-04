@@ -1,0 +1,1 @@
+export const jwtSecret = 'secretkeyk44fun';
