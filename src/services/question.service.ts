@@ -23,7 +23,7 @@ export class QuestionsService {
   }
 
   async findAll(): Promise<Question[]> {
-    return this.questionModel.find({ used: { $ne: true } }).populate('viewer').exec();
+    return this.questionModel.find({ used: { $ne: true } }).sort([['created', -1]]).populate('viewer').exec();
   }
 
   async findById(id: string): Promise<Question> {
