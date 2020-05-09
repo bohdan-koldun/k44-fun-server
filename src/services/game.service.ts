@@ -25,15 +25,12 @@ export class GamesService {
   }
 
   async findById(id: string): Promise<Game> {
-    const game = await this.gameModel.findById(id).populate(['team']);
-    const questions = await this.questionModel.find({game: game.id }).populate('viewer').exec();
+    const game = await this.gameModel.findById(id).populate(['team', { path: 'questions', populate: { path: 'viewer' } }, { path: 'blitz', populate: { path: 'viewer' } }]);
     const team = await this.teamModel.findById(game.team['_id']).populate(["captain", "experts"])
 
     return {
       ...game.toObject(),
       team: team.toObject(),
-      questions: questions.filter(question => !game.blitz.includes(question.id)),
-      blitz: questions.filter(question => game.blitz.includes(question.id)),
     };
   }
 }
