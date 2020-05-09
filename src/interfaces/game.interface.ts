@@ -5,4 +5,5 @@ export interface Game extends Document {
   readonly date: Date;
   readonly team: string;
   readonly blitz: string[];
+  readonly questions: string[];
 }
