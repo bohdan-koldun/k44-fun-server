@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, UseGuards } from '@nestjs/common';
 import { ExpertDto } from '../dto/expert.dto';
 import { ExpertsService } from '../services/expert.service';
 import { Expert } from '../interfaces/expert.interface';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('experts')
 export class ExpertsController {
@@ -13,6 +14,7 @@ export class ExpertsController {
   }
 
   @Get()
+  @UseGuards(AuthGuard('jwt'))
   async findAll(): Promise<Expert[]> {
     return this.expertService.findAll();
   }
